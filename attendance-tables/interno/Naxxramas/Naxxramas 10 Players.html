@@ -11,45 +11,62 @@
                     margin: 40px;
                     background-color: #f7f7f7;
                 }
+
                 header {
                     display: flex;
+                    justify-content: flex-start;
                     align-items: center;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
                 }
+
                 header img {
-                    height: 60px;
-                    margin-right: 20px;
+                    height: 90px;            
+                    border-radius: 12px;
                 }
-                header h1 {
+
+                .table-title {
+                    text-align: center;
+                    font-size: 2em;
+                    font-weight: bold;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
                     color: #333;
-                    font-size: 1.8em;
                 }
+
                 .attendance-table {
                     width: 80%;
-                    margin: 20px auto;
+                    margin: 0 auto;
                     border-collapse: collapse;
                     background-color: #fff;
                     box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
                 }
-                .attendance-table th, .attendance-table td {
+
+                .attendance-table th {
+                    background-color: #CCAA00;
+                    color: white;
+                    padding: 12px;
+                    font-size: 1.1em;
+                }
+
+                .attendance-table td {
                     padding: 10px;
                     text-align: left;
                     border-bottom: 1px solid #ddd;
                 }
-                .attendance-table th {
-                    background-color: #4CAF50;
-                    color: white;
-                }
+
                 .attendance-table tr:hover {
                     background-color: #f1f1f1;
                 }
             </style>
         </head>
         <body>
+
             <header>
                 <img src="https://chromie-gda.github.io/gda-attendance-raid-list-tables/assets/gda-logo.png" alt="Logo">
-                <h1>Naxxramas 10 Players - Attendance List</h1>
             </header>
+
+            <div class="table-title">Naxxramas 10 Players - Attendance List</div>
+
             <table class="dataframe attendance-table">
   <thead>
     <tr style="text-align: right;">
@@ -62,15 +79,16 @@
     <tr>
       <td>Franchino</td>
       <td>Mallet of the Tides</td>
-      <td>28</td>
+      <td>30</td>
     </tr>
     <tr>
       <td>Paolino</td>
       <td>Stivale di gesu</td>
-      <td>17</td>
+      <td>19</td>
     </tr>
   </tbody>
 </table>
+
         </body>
         </html>
         
