@@ -1,0 +1,251 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Naxxramas 25 Players - Attendance List</title>
+
+            <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+            <style>
+                html, body {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                body {
+                    font-family: Arial, sans-serif;
+                    background-image: url('https://chromie-gda.github.io/gda-attendance-raid-list-tables/assets/wow-wallpaper.jpg');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    color: #fff;
+                    min-height: 100%;
+                }
+
+                header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 20px 40px;
+                }
+
+                .header-left img, .header-right img {
+                    height: 90px;
+                    border-radius: 12px;
+                }
+
+                .table-title {
+                    text-align: center;
+                    font-family: 'Cinzel', serif;
+                    font-size: 2.3em;
+                    font-weight: 700;
+                    margin: 10px 0 10px 0;
+                    color: #CCAA00;
+                    letter-spacing: 1.5px;
+                    animation: pulseGlow 5s ease-in-out infinite;
+                }
+
+                @keyframes pulseGlow {
+                    0%, 100% { text-shadow: none; }
+                    25% { text-shadow: 0 0 4px rgba(204,170,0,0.4), 0 0 10px rgba(204,170,0,0.3); }
+                    50% { text-shadow: 0 0 6px rgba(204,170,0,0.6), 0 0 14px rgba(204,170,0,0.45), 0 0 24px rgba(204,170,0,0.35); }
+                    75% { text-shadow: 0 0 4px rgba(204,170,0,0.4), 0 0 10px rgba(204,170,0,0.3); }
+                }
+
+                .search-container {
+                    width: 80%;
+                    margin: 0 auto 10px;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                .search-container input {
+                    padding: 6px 10px;
+                    font-size: 1em;
+                    border-radius: 6px;
+                    border: 2px solid #CCAA00;
+                    background-color: rgba(0,0,0,0.8);
+                    color: #CCAA00;
+                    outline: none;
+                    width: 220px;
+                }
+
+                .search-container input::placeholder {
+                    color: #CCAA00;
+                    opacity: 0.7;
+                }
+
+                .attendance-table {
+                    width: 80%;
+                    margin: 0 auto 40px auto;
+                    border-collapse: collapse;
+                    background-color: rgba(17,17,17,0.85);
+                    box-shadow: 0px 2px 5px rgba(255,255,255,0.1);
+                    border-top: 2px solid #CCAA00;
+                    border-bottom: 2px solid #CCAA00;
+                    cursor: default;
+                }
+
+                .attendance-table th {
+                    background-color: #CCAA00;
+                    color: #000;
+                    padding: 12px;
+                    font-size: 1.05em;
+                    text-align: left;
+                    font-family: Arial, sans-serif;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                    position: relative;
+                }
+
+                .attendance-table th:hover {
+                    box-shadow: inset 0 0 10px rgba(204, 170, 0, 0.4);
+                }
+
+                .attendance-table th .sort-arrow {
+                    margin-left: 6px;
+                    font-size: 0.8em;
+                    color: #000;
+                }
+
+                .attendance-table td {
+                    padding: 10px;
+                    text-align: left;
+                    border-bottom: 1px solid #333;
+                    font-family: Arial, sans-serif;
+                    transition: all 0.3s ease;
+                }
+
+                .attendance-table tr:last-child td {
+                    border-bottom: none;
+                }
+
+                .attendance-table tr:hover {
+                    background-color: rgba(34,34,34,0.9);
+                    box-shadow: inset 0 0 10px rgba(204, 170, 0, 0.4);
+                }
+
+                .bottom-message {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 30px;
+                    gap: 10px;
+                    font-family: Arial, sans-serif;
+                }
+
+                .small-gif {
+                    width: 100px;
+                    height: auto;
+                    border-radius: 6px;
+                }
+            </style>
+        </head>
+
+        <body>
+
+            <header>
+                <div class="header-left">
+                    <img src="https://chromie-gda.github.io/gda-attendance-raid-list-tables/assets/gda-logo.png" alt="GDA Logo">
+                </div>
+                <div class="header-right">
+                    <img src="https://chromie-gda.github.io/gda-attendance-raid-list-tables/assets/chromie.png" alt="Chromie">
+                </div>
+            </header>
+
+            <div class="table-title">Naxxramas 25 Players - Attendance List</div>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search...">
+            </div>
+
+            <table class="dataframe attendance-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Player</th>
+      <th>Reserve</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.chromiecraft.com/en/armory/?character/ChromieCraft/arika" target="_blank" style="color:#F58CBA;">Arika</a></td>
+      <td><a href="https://www.wowhead.com/wotlk/item=40258" data-wowhead="item=40258&tooltip=right" style="color:#CCAA00;text-decoration:none;">Forethought Talisman</a></td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.chromiecraft.com/en/armory/?character/ChromieCraft/infame" target="_blank" style="color:#FFF569;">Infame</a></td>
+      <td><a href="https://www.wowhead.com/wotlk/item=39714" data-wowhead="item=39714&tooltip=right" style="color:#CCAA00;text-decoration:none;">Webbed Death</a></td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.chromiecraft.com/en/armory/?character/ChromieCraft/lamaro" target="_blank" style="color:#F58CBA;">Lamaro</a></td>
+      <td><a href="https://www.wowhead.com/wotlk/item=39704" data-wowhead="item=39704&tooltip=right" style="color:#CCAA00;text-decoration:none;">Pauldrons of Unnatural Death</a></td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.chromiecraft.com/en/armory/?character/ChromieCraft/orcaloca" target="_blank" style="color:#ABD473;">Orcaloca</a></td>
+      <td><a href="https://www.wowhead.com/wotlk/item=40385" data-wowhead="item=40385&tooltip=right" style="color:#CCAA00;text-decoration:none;">Envoy of Mortality</a></td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.chromiecraft.com/en/armory/?character/ChromieCraft/reinhil" target="_blank" style="color:#C79C6E;">Reinhil</a></td>
+      <td><a href="https://www.wowhead.com/wotlk/item=40384" data-wowhead="item=40384&tooltip=right" style="color:#CCAA00;text-decoration:none;">Betrayer of Humanity</a></td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.chromiecraft.com/en/armory/?character/ChromieCraft/zalausthra" target="_blank" style="color:#69CCF0;">Zalausthra</a></td>
+      <td><a href="https://www.wowhead.com/wotlk/item=40255" data-wowhead="item=40255&tooltip=right" style="color:#CCAA00;text-decoration:none;">Dying Curse</a></td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+            <div class="bottom-message">
+                <img class="small-gif" src="https://chromie-gda.github.io/gda-attendance-raid-list-tables/assets/dance.gif" alt="Dancing GIF">
+                <span><strong>Thanks for joining us!</strong></span>
+            </div>
+
+            <script src="https://wow.zamimg.com/widgets/power.js"></script>
+
+            <script>
+                const searchInput = document.getElementById('searchInput');
+                const table = document.querySelector('.attendance-table');
+                const tbody = table.tBodies[0];
+
+                searchInput.addEventListener('input', () => {
+                    const filter = searchInput.value.toLowerCase();
+                    Array.from(tbody.rows).forEach(row => {
+                        const rowText = row.innerText.toLowerCase();
+                        row.style.display = rowText.includes(filter) ? '' : 'none';
+                    });
+                });
+
+                Array.from(table.querySelectorAll('th')).forEach((th, index) => {
+                    let asc = true;
+                    const arrow = document.createElement('span');
+                    arrow.className = 'sort-arrow';
+                    th.appendChild(arrow);
+                    th.addEventListener('click', () => {
+                        const rows = Array.from(tbody.rows);
+                        rows.sort((a, b) => {
+                            const valA = a.cells[index].innerText.toLowerCase();
+                            const valB = b.cells[index].innerText.toLowerCase();
+                            if (!isNaN(valA) && !isNaN(valB)) return asc ? valA - valB : valB - valA;
+                            return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                        });
+                        rows.forEach(row => tbody.appendChild(row));
+                        Array.from(table.querySelectorAll('.sort-arrow')).forEach(a => a.textContent = '');
+                        arrow.textContent = asc ? '▲' : '▼';
+                        asc = !asc;
+                    });
+                });
+            </script>
+
+        </body>
+        </html>
+        
